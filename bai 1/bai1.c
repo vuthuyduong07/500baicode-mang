@@ -1,5 +1,6 @@
+//Find pair with given sum in the array
+
 #include <stdio.h>
-#include <stdlib.h>
 
 int find(int A[], int n, int B[], int t) {
     int c = 0;
