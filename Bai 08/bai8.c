@@ -12,7 +12,9 @@ int finding(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = { 4, 3, 6, 2, 6, 4, 2, 3, 4, 3, 3 };
+    //int arr[] = { 4, 3, 6, 2, 6, 4, 2, 3, 4, 3, 3 };
+    //int arr[] = {2, 2, 1};
+    int arr[] = { 1, 2, 3, 2, 3, 1, 3 };
     int n = sizeof(arr) / sizeof(arr[0]);
 
     printf("arr[] = [ ");

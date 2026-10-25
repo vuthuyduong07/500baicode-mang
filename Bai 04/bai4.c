@@ -15,22 +15,27 @@ void sort(int A[], int n){ //sap xep chen
 }
 
 int main(){
-    int n; 
-    scanf("%d",&n);
+    int n;
+    if (scanf("%d", &n) != 1 || n < 2) {
+        return 1;
+    }
+
     int A[n];
     for(int i=0; i<n; i++){
-        scanf("%d",&A[i]);
+        if (scanf("%d", &A[i]) != 1) {
+            return 1;
+        }
     }
-    sort (A,n);
-    if(A[0]*A[1]>A[n-1]*A[n-2]){
-        printf("(%d,%d)",A[0],A[1]);
-    }
-        sort (A,n);
-    if(A[0]*A[1]<A[n-2]*A[n-1]){
-        printf("(%d,%d)",A[n-1],A[n]);
-    }
-        sort (A,n);
-    if((A[0]*A[1])==(A[n-2]*A[n-1])){
+
+    sort(A, n);
+    long long minProduct = (long long)A[0] * A[1];
+    long long maxProduct = (long long)A[n - 2] * A[n - 1];
+
+    if (minProduct > maxProduct) {
+        printf("(%d,%d)", A[0], A[1]);
+    } else if (minProduct < maxProduct) {
+        printf("(%d,%d)", A[n - 2], A[n - 1]);
+    } else {
         printf("(%d,%d) or (%d,%d)",A[0],A[1],A[n-2],A[n-1]);
     }
     return 0;
